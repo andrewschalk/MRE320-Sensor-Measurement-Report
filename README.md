@@ -22,7 +22,7 @@ Measured Characteristics:
 * Range: 25-400 [cm]
 * Repeatability: Average measurements between​ the two tests are close, therefore the tests have good ​repeatability​.
 * Accuracy and Precision: 1-250cm are not accurate or precise.​ 300-400cm are somewhat accurate and precise.​ 450-500cm are precise but not accurate.
-* Static Error: No Consistent Static error was found between distances.
+* Static Error: No consistent static error was found between distances.
 ### MPU-6050
 Measured Characteristics:
 * Accelerometer Sensitivity: 1563 [ul/m/s2]
