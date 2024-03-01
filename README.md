@@ -17,7 +17,7 @@ Within each sensor's folder, one can find the MATLAB code to reproduce our graph
 * Humidity Accuracy:    within 1 [%]
 * Temperature Accuracy: within 1 [%]
 * Humidity Range:    40-100 [%]
-* Temperature Range: 40-60 [°C]
+* Temperature Range: 0-60 [°C]
 ### [HC-SR04](/HCSR04)
 * Range: 25-400 [cm]
 * Repeatability: Average measurements between​ the two tests are close, therefore the tests have good ​repeatability​.
