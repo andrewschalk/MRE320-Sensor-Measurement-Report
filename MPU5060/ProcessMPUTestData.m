@@ -187,7 +187,7 @@ hold on;
 scatter(refGyroY,measureGyroY);
 hold on
 scatter(refGyroZ,-measureGyroZ);
-%polyGyro = polyfit([refGyroX.' refGyroY.' refGyroZ.'],[-measureGyroX.' measureGyroY.' -measureGyroZ.'],1);
+polyGyro = polyfit([refGyroX.' refGyroY.' refGyroZ.'],[-measureGyroX.' measureGyroY.' -measureGyroZ.'],1);
 hold on;
 %plot(refGyroX,polyval(polyGyro,refGyroX),'LineWidth',3)
 hold on;
@@ -208,7 +208,7 @@ for i=1:length(acc)
     lineY       = polyval(polyAcc,acc(i,2));
     accError(i) = abs(lineY-acc(i,1))/1563;
 end
-meanAccError = mean(accError);
+stdAccError = std(accError);
 maxAccError  = max(accError);
 
 % Gyroscope
@@ -217,15 +217,15 @@ for i=1:length(gyro)
     lineY        = polyval(polyGyro,gyro(i,2));
     gyroError(i) = abs(lineY-gyro(i,1))/199.1;
 end
-meanGyroError = mean(gyroError);
+stdGyroError = std(gyroError);
 maxGyroError  = max(gyroError);
 
 %% Calculating non-linearity
 % Accelerometer
-lineY = polyval(polyAcc,acc(:,2));
-polyY = polyval(poly4Acc,acc(:,2));
-accNonLinearity = max(abs(lineY-polyY))/1563;
+%lineY = polyval(polyAcc,acc(:,2));
+%polyY = polyval(poly4Acc,acc(:,2));
+%accNonLinearity = max(abs(lineY-polyY))/1563;
 % Gyroscope
-lineY = polyval(polyGyro,gyro(:,2));
-polyY = polyval(poly4Gyro,gyro(:,2));
-gyroNonLinearity = max(abs(lineY-polyY))/199.1;
+%lineY = polyval(polyGyro,gyro(:,2));
+%polyY = polyval(poly4Gyro,gyro(:,2));
+%gyroNonLinearity = max(abs(lineY-polyY))/199.1;
